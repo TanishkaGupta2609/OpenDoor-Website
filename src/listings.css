@@ -1,0 +1,552 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #c9e4ff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 15px rgba(0, 80, 160, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.logo span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0050a0;
+}
+
+.navbar nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #0050a0;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.navbar nav a:hover {
+    background: #ffffff;
+    color: #0050a0;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-buttons .login {
+    background: #ffffff;
+    color: #0050a0;
+    border: 2px solid #0050a0;
+}
+
+.nav-buttons .login:hover {
+    background: #0050a0;
+    color: #ffffff;
+}
+
+/* Container */
+.container {
+    display: flex;
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+/* Filters */
+.filters {
+    flex: 0 0 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 80, 160, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.filters h2 {
+    color: #0050a0;
+    margin-bottom: 25px;
+    font-size: 24px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+}
+
+.filter-group h3 {
+    color: #2d3748;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.price-input {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.price-values {
+    display: flex;
+    justify-content: space-between;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 5px 0;
+    color: #475569;
+    transition: color 0.3s;
+}
+
+.filter-options label:hover {
+    color: #0050a0;
+}
+
+.filter-options input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #0050a0;
+}
+
+/* Listings */
+.listings {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.house-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.house-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 80, 160, 0.15);
+}
+
+.house-img {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.house-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.house-card:hover .house-img img {
+    transform: scale(1.05);
+}
+
+.house-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 80, 160, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.house-img:hover .house-overlay {
+    opacity: 1;
+}
+
+.quick-view-btn {
+    background: white;
+    color: #0050a0;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quick-view-btn:hover {
+    background: #0050a0;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
+.house-info {
+    padding: 20px;
+}
+
+.house-info h3 {
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-size: 18px;
+    min-height: 54px;
+}
+
+.house-info p {
+    color: #64748b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.house-info .price {
+    color: #0050a0;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 15px 0;
+    text-align: center;
+    background: #f0f7ff;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.view-details-btn {
+    flex: 1;
+    padding: 12px;
+    background: #f8fafc;
+    color: #0050a0;
+    border: 2px solid #0050a0;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.view-details-btn:hover {
+    background: #0050a0;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.rent-now-card-btn {
+    flex: 1;
+    padding: 12px;
+    background: linear-gradient(135deg, #0050a0, #4dabf7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.rent-now-card-btn:hover {
+    background: linear-gradient(135deg, #004080, #3b82f6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 80, 160, 0.3);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    display: block;
+    margin: 40px auto;
+    max-width: 80%;
+    max-height: 70%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #0050a0;
+}
+
+#modalCaption {
+    text-align: left;
+    color: white;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#modalCaption h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #fff;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+#modalCaption p {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#modalCaption i {
+    color: #4dabf7;
+    width: 16px;
+    text-align: center;
+}
+
+.amenity-tag {
+    display: inline-block;
+    background: #e6f0ff;
+    color: #0050a0;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 2px;
+    border: 1px solid #c9e4ff;
+}
+
+.property-description {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #4dabf7;
+}
+
+.property-description p {
+    color: #e2e8f0;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: center;
+}
+
+.primary-btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #0050a0, #4dabf7);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.primary-btn:hover {
+    background: linear-gradient(135deg, #004080, #3b82f6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 80, 160, 0.3);
+}
+
+.secondary-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 60px 20px;
+    grid-column: 1 / -1;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.no-results i {
+    font-size: 64px;
+    color: #4dabf7;
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.no-results h3 {
+    font-size: 24px;
+    color: #0050a0;
+    margin-bottom: 10px;
+}
+
+.no-results p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+    }
+    
+    .navbar nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .footer-contact,
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .modal-content {
+        max-width: 95%;
+        max-height: 60%;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .listings {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters {
+        padding: 20px;
+    }
+    
+    .house-info {
+        padding: 15px;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+}

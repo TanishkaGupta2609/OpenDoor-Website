@@ -1,0 +1,199 @@
+.about-page {
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+/* --- Why Choose Us Section --- */
+.why-choose-us {
+  padding: 80px 10%;
+  background-color: #f8f9fa;
+}
+
+.why-choose-us .content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.why-choose-us .image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.why-choose-us .text-content {
+  flex: 1;
+  min-width: 280px;
+}
+
+.why-choose-us h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.why-choose-us p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* --- 3 Steps Section --- */
+.steps-section {
+  text-align: center;
+  padding: 80px 10%;
+  background-color: #ffffff;
+}
+
+.steps-section h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #2c3e50;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.step:hover {
+  transform: translateY(-10px);
+  background: #007bff;
+  color: white;
+}
+
+.step img {
+  width: 50px;
+  margin-bottom: 20px;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.step:hover p {
+  color: #f1f1f1;
+}
+
+/* --- Client Reviews Section --- */
+.reviews-section {
+  padding: 80px 10%;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #2c3e50;
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.review {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.review:hover {
+  transform: translateY(-8px);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.profile img {
+  border-radius: 50%;
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+}
+
+.profile h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.stars {
+  color: #f4c542;
+  font-size: 0.9rem;
+}
+
+.review p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .why-choose-us .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .why-choose-us .image img {
+    max-width: 100%;
+  }
+
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    width: 90%;
+  }
+
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+}

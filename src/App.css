@@ -1,0 +1,61 @@
+/* App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0a0a2a; /* Dark blue background from your images */
+  color: white;
+  line-height: 1.6;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+}
+
+/* Global button styles */
+button {
+  font-family: inherit;
+}
+
+/* Global input styles */
+input, textarea, select {
+  font-family: inherit;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a2a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(108, 151, 173);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:rgb(108, 151, 173);
+}
