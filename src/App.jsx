@@ -5,7 +5,7 @@ import Contact from './Contact';
 import LoginPage from './LoginPage';
 import SignUp from './SignUp';
 import Footer from './Footer';
-import Listings from './listings';
+import Listings from './Listings';
 import OrderHistory from './OrderHistory';
 import AboutUs from './AboutUs';
 import Faq from './Faq';
